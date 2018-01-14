@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no" />
+  <title>template</title>
+  <link rel="" href="" type="text/css" />
+  <style type="text/css">
+  </style>
+</head>
+<body>
+<script type="text/javascript">
+	/**
+	** 有 try catch  不阻断顺序语句的运行
+	******/
+	function test(){
+		try{
+			onsole.log('aaaaaaa');
+			console.log('bbbbbbb');
+		}
+
+		catch(e){
+			console.log(e);
+			console.log('错误已经被打印出来！');
+		}
+	}
+
+	test();
+	console.log('ccccccccc');
+
+
+	/**
+	** 无 try catch 阻断顺序语句的运行
+	********/
+	/*function test2(){
+		onsole.log('aaaaa');
+		console.log('bbbbbb');
+	}
+
+	test2();
+	console.log('ccccc');*/
+</script>
+<script src=""></script>
+</body>
+</html>
+

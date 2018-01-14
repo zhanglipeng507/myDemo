@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no" />
+  <title>template</title>
+  <link rel="" href="" type="text/css" />
+  <style type="text/css">
+  </style>
+</head>
+<body>
+<script type="text/javascript">
+	var randomArrays = 
+						[{
+							s: 2,
+							e: 5
+						}, {
+							s: 1,
+							e: 4
+						}, {
+							s: 6,
+							e: 8
+						}, {
+							s: 3,
+							e: 4
+						}, {
+							s: 10,
+							e: 15
+						}];
+
+	function sortFun(arr){
+		var arr = arr || [];
+		var count = 0;
+
+		for(var i = 0; i < arr.length - 1; i++){
+			for(var j = 0; j < arr.length - 1 -i; j++){
+				if(arr[i].s > arr[i+1].s){
+					var temp = arr[i];
+
+						arr[i] = arr[i+1];
+						arr[i+1] = temp;
+
+				}
+				count++;
+			}
+		}
+
+		console.log(arr);
+		console.log(count);
+
+		var lng = 0;
+		arr.reduce(function(pre,cur,index,s){
+			if(index >= s.length -1){
+				lng += (cur.e - cur.s);
+			}
+			if(pre.e >= cur.e){
+				return {s : pre.s , e : pre.e}
+			}else if(pre.e < cur.e && pre.e >= cur.s){
+				return {s : pre.s , e : cur.e}
+			}else{
+				lng += (pre.e - pre.s);
+				return {s : cur.s , e : cur.e}
+			}
+		})
+		console.log(lng);
+
+		return lng;
+	}
+
+	console.log(sortFun(randomArrays));
+</script>
+<script src=""></script>
+</body>
+</html>

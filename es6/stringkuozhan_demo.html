@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no" />
+  <title>template</title>
+  <link rel="" href="" type="text/css" />
+  <style type="text/css">
+  </style>
+</head>
+<body>
+<script type="text/javascript">
+	let str = 'hello';
+	for(let code of str){
+		console.log(code);
+	}
+
+	//参数字符串 是否在头部
+	let bool = str.startsWith('he');
+	console.log(bool);
+	//参数字符串 是否在尾部
+	let bool2 = str.endsWith('o');
+	console.log(bool2);
+	//是否找到了字符串 等同于 indexOf
+	let bool3 = str.includes('l');
+	console.log(bool3);
+	//返回该指定字符串 在字符串中的位置（找到第一个后就返回
+	let bool4 = str.indexOf('o');
+	console.log(bool4);
+</script>
+<script src=""></script>
+</body>
+</html>
+
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no" />
+  <title>template</title>
+  <link rel="" href="" type="text/css" />
+  <style type="text/css">
+  </style>
+</head>
+<body>
+<script type="text/javascript">
+
+	var CachedSearchBox = (function(){   
+		    var cache = {},   
+		       count = [];   
+		    return {   
+		       attachSearchBox : function(dsid){   
+		           if(dsid in cache){//如果结果在缓存中   
+		              return cache[dsid];//直接返回缓存中的对象   
+		           }   
+		           var fsb = new uikit.webctrl.SearchBox(dsid);//新建   
+		           cache[dsid] = fsb;//更新缓存   
+		           if(count.length > 100){//保正缓存的大小<=100   
+		              delete cache[count.shift()];   
+		           }   
+		           return fsb;         
+		       },   
+		    
+		       clearSearchBox : function(dsid){   
+		           if(dsid in cache){   
+		              cache[dsid].clearSelection();     
+		           }   
+		       }   
+		    };   
+		})();   
+    
+	CachedSearchBox.attachSearchBox("input1");
+</script>
+<script src=""></script>
+</body>
+</html>
+
+

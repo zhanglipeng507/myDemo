@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no" />
+  <title>template</title>
+  <link rel="" href="" type="text/css" />
+  <style type="text/css">
+  	.btn{
+  		width:100%;
+  		height:50px;
+  		text-align:center;
+  		line-height:50px;
+  		font-size:30px;
+  		background: #ff2d4f;
+  		color:#fff;
+        position:fixed;
+        left:0px;
+        bottom:0px;
+  	}
+  	.pop-wrapper{
+  		width:100%;
+  		height:0px;
+        transition:1s all;
+        position:fixed;
+        left:0px;
+        bottom:50px;
+        overflow:hidden;
+        background:#ddd;
+  	}
+    .colse-pop{
+        color:red;
+        width:100%;
+        text-align:right;
+    }
+  </style>
+</head>
+<body>
+<div class="btn" id="btn">点击我</div>
+<div class="pop-wrapper" id="popWrapper">
+	我是盛放弹框的容器
+	<div class="pop-content">
+        <div class="colse-pop" id="colse">点我关闭</div>
+		我是弹框内容我是弹框内容我是弹框内容我是弹框内容
+        我是弹框内容我是弹框内容我是弹框内容我是弹框内容
+        我是弹框内容我是弹框内容我是弹框内容我是弹框内容
+        我是弹框内容
+	</div>
+</div>
+<script type="text/javascript">
+    var popWrapper = document.getElementById('popWrapper'),
+        btn = document.getElementById('btn'),
+        colse = document.getElementById('colse');
+
+    btn.onclick = function(){
+        popWrapper.style.height = '300px';
+    }
+
+    colse.onclick = function(){
+        popWrapper.style.height = '0px';
+    }
+</script>
+<script src=""></script>
+</body>
+</html>

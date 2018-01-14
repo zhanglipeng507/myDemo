@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no" />
+  <title>教师节</title>
+  <link rel="" href="" type="text/css" />
+  <script>
+        //auto adaptation
+        var calculate_size = function () {
+            var BASE_FONT_SIZE = 100;
+            var docEl = document.documentElement,
+                    clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            docEl.style.fontSize = BASE_FONT_SIZE * (clientWidth / 320) + 'px';
+        };
+        // Abort if browser does not support addEventListener
+        if (document.addEventListener) {
+            var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+            window.addEventListener(resizeEvt, calculate_size, false);
+            document.addEventListener('DOMContentLoaded', calculate_size, false);
+            calculate_size();
+        }
+    </script>
+  <style type="text/css">
+  		@keyframes handleScale{
+  			0%{transform:scale(1)}
+  			25%{transform:scale(1.1)}
+  			50%{transform:scale(1.2)}
+  			75%{transform:scale(1.1)}
+  			100%{transform:scale(1)}
+  		}
+  		@-moz-keyframes handleScale{
+  			0%{-moz-transform:scale(1)}
+  			25%{-moz-transform:scale(1.1)}
+  			50%{-moz-transform:scale(1.2)}
+  			75%{-moz-transform:scale(1.1)}
+  			100%{-moz-transform:scale(1)}
+  		}
+  		@-webkit-keyframes handleScale{
+  			0%{-webkit-transform:scale(1)}
+  			25%{-webkit-transform:scale(1.1)}
+  			50%{-webkit-transform:scale(1.2)}
+  			75%{-webkit-transform:scale(1.1)}
+  			100%{-webkit-transform:scale(1)}
+  		}
+  		body{
+  			background:pink;
+  		}
+  		.clas1{
+  			font-size:40px;
+  			color:red;
+  		}
+  		.clas2{
+  			font-size:45px;
+  			color:red;
+  		}
+  		.clas3{
+  			font-size:50px;
+  			color:red;
+  			animation:handleScale 1.5s infinite;
+  		}
+  		.clas2 ,.clas3{
+  			text-align: center;
+  		}
+  </style>
+</head>
+<body>
+	<p class="clas1">祝：</p>
+	<p class="clas2">鞠老师</p>
+	<p class="clas3">教师节快乐！</p>
+</body>
+</html>
+
+

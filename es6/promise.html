@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no" />
+  <title>template</title>
+  <link rel="" href="" type="text/css" />
+  <style type="text/css">
+  </style>
+</head>
+<body>
+<script type="text/javascript">
+  /**
+  ** promise 初试
+  *****/
+
+	/*function timeout (ms){
+      return new Promise((resolve,reject) => {
+        setTimeout(resolve,ms,'done');
+      })
+  }
+  timeout(1000).then((value) => {
+    console.log(value);
+  },(erro) => {
+    console.log(erro);
+  })*/
+  
+
+  /**
+  ** promise 与 catch
+  ******/
+
+  //demo1
+  /*let promise = new Promise(function(resolve,reject){
+    console.log('我是第一个出来的');
+    resolve();
+    console.log('我应该是第二个出来的');
+  }).catch(function(e){  console.log(e);});
+
+  //promise.catch(function(e){  console.log(e);});
+
+  promise.then(() =>{
+    console.log('我应该是最后一个出来的');
+  });
+
+  console.log('我感觉我应该是第三个出来的');*/
+
+
+  //demo2
+  /*const someAsyncThing = function(){
+    return new Promise(function(resolve,reject){
+
+                        cosole.log('first');
+
+                        resolve();
+
+                        console.log('two');
+                      });
+  }
+
+  someAsyncThing().catch(function(erro){
+    console.log(erro);
+  }).then((data) =>{
+      console.log('success')
+  });*/
+  
+  /**
+  **promise 与 then
+  **
+  *****/
+ 
+  /*const promiseThen = new Promise(function(resolve,reject){
+      setTimeout(resolve,1000,'hahah')
+  })
+
+  promiseThen.then(function(data){
+    console.log(data);
+    return new Promise(function(resolve,reject){
+      setTimeout(resolve,1000,'ohohoh')
+    });
+  },function(){}).then(function(e){
+    console.log(e);
+  }).then(function(){
+    console.log('我还能出来');
+  })*/
+
+  /*****
+  **promise 与 catch
+  *********/
+
+  const createPromise = function(params){
+    return new Promise(function(resolve,reject){
+        console.log('Promise内部');
+        setTimeout(resolve,1000,params);
+    })
+  }
+
+  //createPromise('我是第一个').then(function(data){
+  //  console.log(data);
+  //},function(erro){
+  //  console.log(erro);
+  //});
+
+  createPromise('我是第二个').catch(function(erro){
+      cosole.log(erro);
+  }).then(function(data){
+    console.log(data);
+  }).catch(function(erro){
+    console.log(erro);
+  })
+
+
+
+
+
+
+
+
+</script>
+<script src=""></script>
+</body>
+</html>
